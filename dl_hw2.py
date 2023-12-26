@@ -336,7 +336,7 @@ def testConvNet(images_dir, model, device):
         pred_dict['Prediction'] = int2labels[int(pred_label.item())]
         preds.append(pred_dict)
 
-    with open('CNN_TestResults.csv', 'w') as csvfile:
+    with open('CNN/CNN_TestResults.csv', 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=field_names)
         writer.writeheader()
         writer.writerows(preds)
@@ -591,7 +591,7 @@ def testAE(images_dir, ae_model, ffnn_model, device):
         pred_dict['Prediction'] = int2labels[int(pred_label.item())]
         preds.append(pred_dict)
 
-    with open('AE_TestResults.csv', 'w') as csvfile:
+    with open('Autoencoder/AE_TestResults.csv', 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=field_names)
         writer.writeheader()
         writer.writerows(preds)
